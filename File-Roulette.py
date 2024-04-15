@@ -2,6 +2,10 @@ import random
 import os
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import ttk
+from ctypes import windll
+
+windll.shcore.SetProcessDpiAwareness(1)
 
 def delete_file(file_name):
     if os.path.exists(file_name):
@@ -36,10 +40,10 @@ label.pack()
 entry = tk.Entry(root, width=30)
 entry.pack()
 
-btn_browse = tk.Button(root, text="Browse", command=browse_file)
+btn_browse = ttk.Button(root, text="Browse", command=browse_file, width=12)
 btn_browse.pack()
 
-btn_roll = tk.Button(root, text="Start Roulette", command=roll_dice)
+btn_roll = ttk.Button(root, text="Start Roulette", command=roll_dice, width=12)
 btn_roll.pack()
 
 output_text = tk.Text(root, height=10, width=40)
